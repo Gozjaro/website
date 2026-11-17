@@ -1,24 +1,123 @@
 <!doctype html>
-
 <html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gozjaro Linux — 从零构建的极简发行版</title>
+  <meta name="description" content="Gozjaro Linux，基于 LFS 12.3 从零构建的极简 Linux 发行版。自研 gozpak、纯终端 ISO、桌面自选，一块留给你自己画的白板。">
+  <meta name="keywords" content="Gozjaro,Linux,LFS,Linux From Scratch,gozpak,极简发行版,开源">
+  <meta name="theme-color" content="#f7f7fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="Gozjaro Linux">
+  <meta property="og:title" content="Gozjaro Linux — 从零构建的极简发行版">
+  <meta property="og:description" content="从零构建的极简 Linux 发行版，一块留给你自己画的白板。">
+  <meta property="og:url" content="https://gozjaro.github.io/website/">
+  <meta property="og:image" content="https://gozjaro.github.io/website/img/og.jpg">
+  <meta property="og:image:alt" content="Gozjaro Linux 粉蓝色山景">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gozjaro Linux — 从零构建的极简发行版">
+  <meta name="twitter:description" content="从零构建的极简 Linux 发行版，一块留给你自己画的白板。">
+  <meta name="twitter:image" content="https://gozjaro.github.io/website/img/og.jpg">
+  <meta name="twitter:image:alt" content="Gozjaro Linux 粉蓝色山景">
+  <link rel="icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./js/vendor/gsap.min.js" defer></script>
+  <script src="./js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="./js/index.js" defer></script>
+  <script src="./js/anim.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="./" aria-label="Gozjaro 首页">
+        <img src="./logo.svg" alt="" width="36" height="36">
+        <span>Gozjaro</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#features">特性</a>
+        <a href="#start">上手</a>
+        <a href="#projects">项目</a>
+        <a href="#community">社区</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="深色模式" aria-pressed="false" hidden>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"></path></svg>
+        </button>
+        <a class="header-github" href="https://github.com/Gozjaro">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
 
-    <head>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="accent-dot" aria-hidden="true"></span> 从零开始，自由构建</p>
+          <h1 id="hero-title">Gozjaro <span>Linux</span></h1>
+          <p class="hero-description">从零构建的极简 Linux 发行版，<br class="desktop-break">一块留给你自己画的白板。</p>
+          <div class="button-row">
+            <a class="button button-primary" href="#start">快速上手 <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="https://github.com/Gozjaro">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <img class="hero-logo" src="./logo.svg" alt="Gozjaro 狗头标志，粉色左耳与蓝色右耳" width="512" height="512">
+      </div>
+      <div class="container hero-footnote"><span>基于 LFS 12.3</span><span>纯终端 ISO</span><span>桌面自选</span></div>
+    </section>
 
-        <meta charset="utf-8">
-        <meta name="keywords" content="">
-        <meta name="description" content="">
+    <section class="section container" id="features" aria-labelledby="features-title">
+      <div class="section-heading"><p class="eyebrow">01 / 特性</p><h2 id="features-title">少一点预设，多一点自由。</h2></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="card-index" aria-hidden="true">01</span><h3>基于 LFS 12.3</h3><p>从 Linux From Scratch 构建，系统里每个包都知道从哪来</p></article>
+        <article class="feature-card"><span class="card-index" aria-hidden="true">02</span><h3>自研 gozpak</h3><p>kiss 风格的包管理器，Rust 重写进行中；二进制仓库托管在 GitHub Releases</p></article>
+        <article class="feature-card"><span class="card-index" aria-hidden="true">03</span><h3>纯终端 ISO</h3><p>开机就是一个干净的 shell，没有预装的臃肿</p></article>
+        <article class="feature-card"><span class="card-index" aria-hidden="true">04</span><h3>桌面自选</h3><p>不绑定任何桌面环境，GNOME、KDE、Xfce 还是平铺 WM，你说了算</p></article>
+        <article class="feature-card"><span class="card-index" aria-hidden="true">05</span><h3>为折腾而生</h3><p>面向喜欢折腾的玩家：从零搭、随便拆、拆坏了再装回来</p></article>
+        <article class="feature-card"><span class="card-index" aria-hidden="true">06</span><h3>社区驱动</h3><p>开源，欢迎提 Issue 和 PR</p></article>
+      </div>
+    </section>
 
-        <link rel="stylesheet" href="./css/index.css" />
-        <script src="./js/index.js"></script>    
+    <section class="start-section" id="start" aria-labelledby="start-title">
+      <div class="container section">
+        <div class="section-heading"><p class="eyebrow">02 / 上手</p><h2 id="start-title">从一个终端开始。</h2></div>
+        <div class="code-grid">
+          <article class="code-card">
+            <div class="code-heading"><h3>使用官方仓库</h3><button class="copy-button" type="button" data-copy="repo-code" aria-label="复制官方仓库命令" aria-live="polite" hidden>复制</button></div>
+            <pre tabindex="0" aria-label="官方仓库命令"><code id="repo-code">echo 'https://github.com/Gozjaro/gozjaro-repo/releases/download/stable' &gt; /etc/gozpak/repos.conf
+gozpak sync
+gozpak get curl</code></pre>
+          </article>
+          <article class="code-card">
+            <div class="code-heading"><h3>从源码构建系统 <span>gozjaro-bootstrap</span></h3><button class="copy-button" type="button" data-copy="build-code" aria-label="复制源码构建命令" aria-live="polite" hidden>复制</button></div>
+            <pre tabindex="0" aria-label="源码构建命令"><code id="build-code">sudo ./build.sh 00-host-check
+sudo LFS_PART=/dev/sdXN ./build.sh 10-partition
+sudo ./build.sh all            # 源码模式：编译约 80 个包</code></pre>
+          </article>
+        </div>
+        <p class="code-note">二进制模式 <code>--mode binary</code> 直接装预编译包，几分钟搞定。</p>
+      </div>
+    </section>
 
-    </head>
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><p class="eyebrow">03 / 项目</p><h2 id="projects-title">打开源码，继续折腾。</h2></div>
+      <div class="project-grid">
+        <a class="project-card" href="https://github.com/Gozjaro/gozpak"><span class="project-arrow" aria-hidden="true">↗</span><h3>gozpak</h3><p>自研包管理器（Rust 重写中）</p></a>
+        <a class="project-card" href="https://github.com/Gozjaro/gozjaro-bootstrap"><span class="project-arrow" aria-hidden="true">↗</span><h3>gozjaro-bootstrap</h3><p>从 LFS 一路构建到可启动 ISO</p></a>
+        <a class="project-card" href="https://github.com/Gozjaro/gozjaro-installer-rs"><span class="project-arrow" aria-hidden="true">↗</span><h3>gozjaro-installer-rs</h3><p>Rust 版安装器，支持 <code>--dry-run</code> 审计</p></a>
+        <a class="project-card" href="https://github.com/Gozjaro/gozjaro-repo"><span class="project-arrow" aria-hidden="true">↗</span><h3>gozjaro-repo</h3><p>官方配方与二进制仓库</p></a>
+        <a class="project-card" href="https://github.com/Gozjaro/gozjaro-wallpapers"><span class="project-arrow" aria-hidden="true">↗</span><h3>gozjaro-wallpapers</h3><p>官方亮/暗壁纸</p></a>
+      </div>
+    </section>
 
-    <body>
-    <noscript>
-        You need to enable JavaScript to run this app.
-    </noscript>
-    
-    
-    </body>
+    <section class="community container" id="community" aria-labelledby="community-title">
+      <div><p class="eyebrow">04 / 社区</p><h2 id="community-title">一起把白板画下去。</h2><p class="community-description">带上你的想法、问题和代码，来一起折腾。</p></div>
+      <div class="button-row"><a class="button button-primary" href="https://github.com/Gozjaro/discussions">GitHub Discussions <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="https://github.com/Gozjaro">提 Issue <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
 
+  <footer class="site-footer container"><p>© Gozjaro Linux</p><p>内容采用 <a href="./LICENSE">CC BY 4.0</a>，代码采用 <a href="./LICENSE-CODE">MIT</a></p></footer>
+</body>
 </html>
